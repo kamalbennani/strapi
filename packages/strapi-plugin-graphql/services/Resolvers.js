@@ -425,11 +425,7 @@ module.exports = {
               }
             }
 
-            if (queryOpts.hasOwnProperty('query') &&
-              queryOpts.query.hasOwnProperty('id') &&
-              queryOpts.query.id.hasOwnProperty('value') &&
-              Array.isArray(queryOpts.query.id.value)
-            ){
+            if (Array.isArray(_.get(queryOpts, 'query.id.value'))) {
               queryOpts.query.id.symbol = 'IN';
             }
 
